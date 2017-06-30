@@ -1,12 +1,12 @@
-#GatherData
+# GatherData
 This code will generate pairs of (inputs,image) as data. The key is the time since the epoch in milliseconds.
 The data can then be fed into an AI to train it. It requires an addition file to interface with a controller. In our case it is the Controller.py file.
 
-#Controller
+# Controller
 This file is setup to enable the use of a Steam Controller. It gives us what the last position of the joystick and whether a or b was the last button pressed.
 If another controller is to be used, then those modifications need to be kept in mind.
 
-#Arduino
+# Arduino
 The arduino code is located in the "WaitForPi" folder.
 It waits for the Raspberry Pi to send 3 values across 9600.
 It will run differently depending on whether it is in ai mode or manual mode.
