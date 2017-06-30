@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+#Original code: https://github.com/ynsta/steamcontroller
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2015 Paul Wachendorf <paul.wachendorf@web.de>
@@ -29,9 +31,12 @@ from steamcontroller import SteamController, SCButtons
 from steamcontroller.events import EventMapper, Pos
 from steamcontroller.uinput import Keys
 
+#start with x = y = 0
 lastPosition = (0,0)
+#start in non recording mode (helpful since you can drive the rover out and then start collecting data)
 buttonPressed = "B"
 
+#All callback functions are actived when the appropriate hardware is activated
 def button_pressed_callback(evm, btn, pressed):
     global buttonPressed
     print "Button {} was {}.".format(btn, 'pressed' if pressed else 'released')
@@ -62,6 +67,7 @@ def stick_axes_callback(evm, x, y):
 def tigger_axes_callback(evm, pos, value):
     print "Trigger axes {} has value {}".format(pos, value)
 
+#Setups callback functions
 def evminit():
     evm = EventMapper()
     evm.setButtonCallback(SCButtons.STEAM, button_pressed_callback)
@@ -85,19 +91,24 @@ def evminit():
     evm.setTrigAxesCallback(Pos.LEFT, tigger_axes_callback)
     return evm
 
+#Starts script
 def initOther():
     evm = evminit()
     sc = SteamController(callback=evm.process)
     sc.run()
 
+#get last position (from the joystick)
 def getLastPos():
     global lastPosition
     return lastPosition
 
+#get last button pressed (from a,b) (more can be added but that is what I needed)
 def getLastPressed():
     global buttonPressed
     return buttonPressed
     
+#Used to run the code if you do not want to gather data
+#helpful in finding out which buttons have which codes and for testing all controller compenents
 if __name__ == '__main__':
     evm = evminit()
     sc = SteamController(callback=evm.process)
