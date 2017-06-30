@@ -1,7 +1,7 @@
 # PiRover
 Code used to create a self-driving rover for Whitworth CS Honours
 
-# Gathering Data
+## Gathering Data
 
 This file holds the code needed to generate the data for the training algorithms
 
