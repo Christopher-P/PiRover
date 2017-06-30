@@ -77,10 +77,18 @@ void loop(){
   back.write(180-turn);
 
   //Go forward some speed
-  //In the ai code this amount is fixed
+  //In the ai code, this amount is fixed
+  
+  // These next few lines need to be edited between generating code and running the AI
+  // since generating data requires nice smooth rover movement while the ai used a turn start stop method.
+  /*********------------Manual Mode-------------*********/
+  //motor.write(speeed);
+  //delay(100);
+  
+
+  /**********-------------AI MODE----------------***************/
   motor.write(speeed);
   delay(1000);
-
   //I believe writing 89 will engage the brakes
   motor.write(89);
   delay(1000);
