@@ -14,6 +14,23 @@ In auto drive mode the motor is set to go for 1 second and then stop for 1 secon
 Please do not rapidally switch between forward and backwards as the motor will not behave as intended. It will not cause the motor to explode if done on acciddent, but repeatedly doing so could cause permanent damage.
 Simple wait a second with the motor in nuetral and proceed in the desired direction.
 
+## Pi camera
+This is the original raspberry pi camera (Raspberry PI 5MP). It works well enough to take decent photos while moving. The camera is mounted directly to the chassis of the rover.
+This is done to prevent the shifting of the suspended frame to alter the rotation of the pictures taken (the frame tilts to its right side witht the camera being the front).
+It is mounted upside down to allow the cable to run upwards.
+The cable is extremely long so the camera can be mounted to any location on the rover.
+
+
+## Pi Power Supply
+The power supply is currently mounted above the Raspberry Pi and connects to its power port via a USB to Micro USB cable. The power supply is "ZILU Smart Power Basic 4400mAh".
+It has enough power to supply the raspberry pi and its peripherals. It does not have enough power to supply the arduino's servos/motors in addition to the Raspberry Pi.
+This supply will last long enough to do a days work on the pi (more than 3 hours). 
+
+
+## Motor Power Supply
+The motor is powered seperatly from a battery pack under the raspberry pi. The supply bank can be charged using the battery chargers located in the supply box. I have not run into the issue of it running out of power, so it should last at least 1 hour.
+There are additional battery packs in the supply box, but I doubt they will be required.
+
 
 ## Bread Board
 The arduino shield should look something like this: https://arduino-info.wikispaces.com/SensorShield#SSM
