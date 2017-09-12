@@ -18,6 +18,7 @@ Servo motor;
 void setup(){
   //standard rate
   Serial.begin(9600);
+  
   //clear the buffer incase a previous run left some data
   Serial.flush();
   
@@ -26,9 +27,11 @@ void setup(){
   front.attach(7);
   //89 is straight ahead
   front.write(89);
+  
   //connect back wheels to pin grouping 11
   back.attach(11);
   back.write(89);
+  
   //connect motor to pin grouping 4
   motor.attach(4);
   motor.write(90);
@@ -51,7 +54,7 @@ void loop(){
     
   }
 
-  //if we have the data ready store it in incoming
+  //if we have the data ready, store it in incoming
   if(Serial.available() >= 3){
    for(int i = 0; i < 3; i++){
     incoming[i] = Serial.read();
@@ -62,7 +65,7 @@ void loop(){
   speeed = incoming[1];
 
   //The amounts the pi sends should already be scaled for a max speed for forward and reverse
-  //This is the final check to prevent the rover from going too fast
+  //This is the final check to prevent the rover from going too fast (CAUTION: IT GOES FAST)
   if (speeed > 120){
    speeed = 85; 
   }

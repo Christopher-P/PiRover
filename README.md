@@ -51,12 +51,10 @@ The bread board is used because the servos need to be powered separately (as the
 So, the servos are powered by a four pack of double batteries wired in series (which equates to 6 volts, which is enough for our needs).
 Each servo/motor has 3 pin connections: ground, high (power source), and control. Instead of using the high source from the Arduino, we replace it with our battery pack (Note: the separated sides of the bread board are all connected along the long side).
 So, for each servo/motor we plug the red wire into high (yes, all of them are connected to the same high alongside the breadboards channel). 
-Each Arduino output pin's ground is connected to the same ground (adjacent to the high channel), which is also connected to the battery pack's low cable (Black), which is also connected to a dedicated Arduino grounding pin, which all of the servo/motor grounding wires (black).
+Each Arduino output pin's ground is connected to the same ground (adjacent to the high channel), which is also connected to the battery pack's low cable (Black), which is also connected to a dedicated Arduino grounding pin, with all of the servo/motor grounding wires connected as well(black).
 Each servo/motor has a white control wire, this wire should be directly connected to the Arduino’s control pins. The wiring should be finished now! 
 
 
 ## Gathering Data
-To gather data (by manually driving the rover)
+To gather data (by manually driving the rover) please see the readme under generateData!
 
-This file holds the code needed to generate the data for the training algorithms
-I am unsure about whether I need the file "scCallbacks" anymore, but I will keep it as a backup
